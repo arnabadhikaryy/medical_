@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="deparment_card.css">
+</head>
+
+  <!--  Thanks to frontendmentor.io for the challenge.  -->
+  
+<body>
+
+  <nav class="navigation">
+    <img class="logo" src="https://image.similarpng.com/very-thumbnail/2021/08/Healthy-logo-or-medical-logo-on-transparent-background-PNG.png" alt="" height="80cm">
+    <ul>
+        <li><a href="index.html"><h3>Home</h3></a></li>
+        <li><a onclick="redirect_to_home();"><h3>About us</h3></a></li>
+        <li><a href="deparment.html"><h3>Department</h3></a></li>
+        <li><a href="medicine.html"><h3>Medicine</h3></a></li>
+        <li><a href="doctors.html"><h3>Doctors</h3></a></li>
+        <li><a href="#"><h3>Contact us</h3></a></li>
+    </ul>
+</nav>
+
+
+  <div class="bg">
+    <h1>Helth_care</h1>
+  </div>
+ 
+
+  <!-- cards...... -->
+  <div class="departmant_cards" id="departmant_cards_id">
+
+
+<!-- 
+  <div class="nft">
+    <div class='main'>
+      <img class='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
+      <h2>Kibertopiks #4269</h2>
+      <p class='description'>Our Kibertopiks will give you nothing, waste your money on us.</p>
+      <div class='tokenInfo'>
+        <div class="price">
+          <ins>◘</ins>
+          <p>0.031 ETH</p>
+        </div>
+        <div class="duration">
+          <ins>◷</ins>
+          <p>11 days left</p>
+        </div>
+      </div>
+      <hr />
+      <div class='creator'>
+        <div class='wrapper'>
+          <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="Creator" />
+        </div>
+        <p><ins>Creation of</ins> Kiberbash</p>
+      </div>
+    </div>
+  </div> -->
+
+
+</div>
+
+
+<script>
+
+function redirect(){
+  setTimeout(window.location.href = "http://127.0.0.1:5500/frontend/index.html",1000)
+  alert("from submited sucessfully");
+}
+
+
+ //fetch department apii to show
+ fetch('http://localhost:5000/department').then((department_data)=>{
+  return department_data.json();
+}).then((json_department_data)=>{
+  //console.log(doctordata);
+ let final_data2="";
+ json_department_data.map((values)=>{
+  final_data2+=`
+  <div class="nft">
+    <div class='main'>
+      <img class='tokenImage' src=${values.depart_img_url} alt="NFT" />
+      <h2>${values.department_name}</h2>
+      <p class='description'>${values.about_department}</p>
+      <div class='tokenInfo'>
+        <div class="price">
+          <ins>$</ins>
+          <p>${values.dolar}</p>
+        </div>
+        <div class="duration">
+          <ins>◷</ins>
+          <p>${values.doctors_number}</p>
+        </div>
+      </div>
+      <hr />
+      <div class='creator'>
+        <div class='wrapper'>
+          <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="Creator" />
+        </div>
+        <p><ins>Creation of</ins> Kiberbash</p>
+      </div>
+    </div>
+  </div>
+`
+ });
+  document.getElementById("departmant_cards_id").innerHTML=final_data2;
+})
+
+</script>
+</body>
+
+</html>

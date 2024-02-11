@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
+    
+    <style>
+        body{
+            background-color: #ffffffe4;
+            font-family: Baloo Da 2;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+
+        /* css for navigationbar */
+        .navigation{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff5c;
+  position: sticky;
+}
+li{
+ list-style: none;
+ margin-left: 0.3cm;
+ margin-right: 0.3cm;
+}
+
+
+nav ul li a{
+  color:black;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+nav ul li a::after{content: "";
+width: 0%;
+height: 3px;
+background-color: black;
+position: absolute;
+transition: 0.5s;
+}
+nav ul li a:hover::after{
+  width: 100%;
+}
+
+
+ul{
+  display: flex;
+}
+        /* css end navigation */
+        .container{
+            display: flex;
+            justify-content: center;
+            border-radius: 20px;
+            /* border: 2px solid black; */
+            height: 28vw;
+            width: 40vw;
+            margin: 20px 0px 0px 30px;
+            box-shadow: 5px 5px 20px rgb(155, 156, 156);
+        }
+        .container img{
+            margin: 80px 0px 0px 25px;
+            cursor: pointer;
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+        }
+        .name{
+            margin: 20px 0px 0px 70px;
+            font-size: 35px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .qualification{
+            margin: -5px 0px 0px 72px;
+            font-size: 18px;
+        }
+        .specialization .heading{
+            margin: 5px 0px 0px 72px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .brief{
+            margin-left: 72px;
+        }
+        .availability .header{
+            margin: 5px 0px 0px 72px;
+            font-weight: 700;
+            font-size: 20px
+        }
+        .availability .day{
+            margin-left: 72px;
+        }
+        .availability .timing{
+            margin-left: 72px;
+        }
+        .availability .extension_number{
+            margin-left: 72px;
+        }
+        .availability .ph_No{
+            margin-left: 72px;
+        }
+        #doctor_card{
+            display: flex;
+
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        button{
+            background-color: blue;
+            color: aliceblue;
+            border-radius: 80px;
+            height: 40px;
+            width: 180px;
+            font-size: 17px;
+            margin: 5px 0px 0px 190px;
+        }
+
+
+
+        /* form styleing */
+
+        p{
+    margin-top: 20px;
+    margin-left: 110px;
+    font-size: 20px;
+}
+
+.forms{
+    display: flex;
+    justify-content: center;
+}
+.arnn{
+    border-radius: 5px;
+    background-color: #fff;
+    border: 2px solid black;
+}
+select{
+    border: none;
+}
+#FName{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 40%;
+    border-radius: 10px;
+}
+#LName{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 40%;
+    border-radius: 10px;
+}
+#email{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 40%;
+    border-radius: 10px;
+}
+#ph_No{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 200px;
+    width: 40%;
+    border-radius: 10px;
+}
+#age{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 200px;
+    width: 40%;
+    border-radius: 10px;
+}
+#gender{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 200px;
+    width: 40%;
+    border-radius: 10px;
+}
+#city{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 200px;
+    width: 40%;
+    border-radius: 10px;
+}
+#country{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 200px;
+    width: 40%;
+    border-radius: 10px;
+}
+#date{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 200px;
+    width: 40%;
+    border-radius: 10px;
+}
+#time{
+    margin: 20px 0px 0px 30px;
+    height: 40px;
+    width: 200px;
+    width: 40%;
+    border-radius: 10px;
+}
+.Book_Appointement{
+    background-color: blue;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    height: 40px;
+    margin: 35px 0px 0px 30px;
+    width: 400px;
+}
+
+
+      
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <img class="logo" src="https://image.similarpng.com/very-thumbnail/2021/08/Healthy-logo-or-medical-logo-on-transparent-background-PNG.png" alt="" height="80cm">
+        <ul>
+            <li><a href="index.html"><h3>Home</h3></a></li>
+            <li><a onclick="redirect_to_home()"><h3>About us</h3></a></li>
+            <li><a href="deparment.html"><h3>Department</h3></a></li>
+            <li><a href="medicine.html"><h3>Medicine</h3></a></li>
+            <li><a href="doctors.html"><h3>Doctors</h3></a></li>
+            <li><a href="#"><h3>Contact us</h3></a></li>
+        </ul>
+    </nav>
+
+     <div id="containerr">
+
+        <form>
+            <p>* Marked fields are mandatory</p>
+            <input type="text" class="arnn"  name="FName" id="FName" placeholder="First Name*">
+            <input type="text" class="arnn" name="LName" id="LName" placeholder="LastName*">
+            <input type="email" class="arnn" name="email" id="email" placeholder="Email*">
+            <input type="number" class="arnn" name="ph_No" id="ph_No" placeholder="Mobile*">
+            <select id="age" name="age" placeholder="Select Age">
+                <option value="">Age Group</option>
+                <option value="under5">0 - 5</option>
+                <option value="under12">6 - 12</option>
+                <option value="under20">13 - 20</option>
+                <option value="under26">20 - 26</option>
+                <option value="26+">Above 26</option>
+              </select>
+            <select name="gender" id="gender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+            <input class="arnn" type="text" name="city" id="city" placeholder="City*">
+            <input class="arnn" type="text" name="country" id="country" placeholder="Country*">
+            <input class="arnn" type="date" name="date" id="date">
+            <input class="arnn" type="time" name="time" id="time">
+            
+            <button onclick="redirect()">submit</button>
+            <button onclick=" on_off()" >close</button>
+        </form>
+
+
+
+        <!-- <div>
+            <input type="text" placeholder="name">
+            <button onclick="redirect()">submit</button>
+            <button onclick=" on_off()">close</button>
+        </div> -->
+      </div> 
+      
+      
+  <div id="doctor_card">
+    <!-- <div class="container">
+        <img src="https://www.sector45.com/wp-content/uploads/2017/04/doc-pic_03.png" alt="Doc_image" height="200px" width="150px">
+        <div class="info">
+            <div class="name">Johny Sins</div>
+            <div class="qualification">
+                MBBS,MS(ORTHO) ,D.ORTHO,MRCS-A
+            </div>
+            <div class="specialization">
+                <div class="heading">Specialization</div>
+                <div class="brief">ORTHOPAEDIC ARTHROSCOPIC AND SPORTS SURGEON</div>
+            </div>
+            <div class="availability">
+                <div class="header">Availability</div>
+                <div class="day">Tuesday</div>
+                <div class="timing">Timings : 15.00-17.00</div>
+                <div class="extension_number">Extension No. : 3027</div>
+                <div class="ph_No">Mobile : +91 9330435378</div>
+                <button> Book an Appointment</button>
+            </div>
+        </div>
+        
+    </div> -->
+
+    
+</div>
+
+
+<script src="frontend_script.js"></script>
+</body>
+</html>

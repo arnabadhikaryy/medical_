@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+/*     HEADER SECTION    */
+header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #2874f0;
+    width: 100%;
+    height: 56px;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+.header-left{
+    width: 20%;
+    text-align: right;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.header-left a{
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+.header-left-p a{
+    font-size: 20px;
+    letter-spacing: 1.5px;
+
+}
+.header-left-p span{
+    color: yellow;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+}
+.header-left-p:hover{
+    text-decoration: underline;
+    color: white;
+}
+/*SEARCH SECTION*/
+.header-center{
+    width: 40%;
+    text-align: left;
+    line-height: 50px;
+    cursor: pointer;
+    padding-left: 10px;
+    position: relative;
+
+}
+.header-center-input{
+    margin-top: 10px;
+    height: 36px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    padding-left: 20px;
+    cursor: auto;
+    border-radius: 10px;
+}
+/*     LOGIN       */
+.login{
+    position: relative;
+    left: 45px;
+    margin-top: 17px;
+}
+.login-btn{
+    color: #2874f0;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: white;
+    height:  32px;
+    letter-spacing: 1px;
+    padding: 6px 40px;
+    font-weight: bold;
+    margin: opx 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+/*  MORE    */
+.more{
+    position: relative;
+    margin-top: 17px;
+}
+.cart{
+    margin-top: 17px;
+    margin-right: 60px;
+}
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+.more-icon{
+    color: #2874f0;
+    margin-left: 15px;
+    padding: 20px;
+}
+.more_lan{
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 20px;
+}
+.pointer{
+    width: 20px;
+    height: 20px;
+    background: black;
+    transform: rotate(45deg);
+    position: relative;
+    top: 10px;
+    left: 80%;
+}
+.fa-angle-down:hover{
+    transform: rotate(180deg);
+}
+.more_dropdown, .login_dropdown{
+    position: relative;
+    top: 12px;
+}
+.login_dropdown_list, .more_dropdown_list{
+    position: absolute;
+    list-style: none;
+    background-color: wheat;
+    width: max-content;
+    box-shadow: 0 40px 16px - rgb(0 0 0 20%);
+    min-width: 240px;
+    transform: translate(-30px);
+}
+.login_drop_li{
+    padding: 16px 20px;
+    border-bottom: 1px solid whitesmoke;
+    font-size: 14px;
+    cursor: pointer;
+}
+.login_drop_li .fa-solid{
+    color: #2874f0;
+    padding-right: 10px;
+}
+.login_drop_li:hovor{
+    background: white;
+}
+.login_drop_li:first-child{
+    padding: 20px;
+}
+.login_drop_li:last-child:hover{
+    color: white;
+}
+.login_drop_li:last-child{
+    padding: 20px;
+}
+.login:hover .login_dropdown,.more:hover .more_dropdown{
+    display: block;
+}
+.sign_up{
+    text-decoration: none;
+    color: #2874f0;
+}
+.sign_up:hover{
+    text-decoration: underline;
+}
+.sign_li{
+    justify-content: space-between;
+    font-size: 14px;
+}
+.new_login{
+    font-weight: bold;
+}
+/*CART*/
+.cart_lan .fa-cart-shopping{
+    padding-right: 12px;
+    padding-top: 20px;
+    color: wheat;
+    cursor: pointer;
+}
+/*   HEADER SECTION END  */
+/*  CATEGORY  SECTION   */
+.category-row{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+.category-col{
+    padding: 10px 0;
+    cursor: pointer;
+    color: rgb(85,83,83);
+}
+.category-col img{
+    width: 64px;
+    height: 64px;
+}
+.category-col h5:hover{
+    color: #2874f0;
+}
+/*  CATRGORY DROPDOWN SECTION   */  
+.dropdown{
+    background-color: aliceblue;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: aqua;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 2);
+    z-index: 1;
+}
+.dropdown-content .header{
+    background: gainsboro;
+    padding: 0px;
+    color: wheat;
+}
+.col{
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    background-color:rgb(215, 242, 255);
+    height: auto;
+}
+.col a{
+    float: none;
+    color: black;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 2px;
+    display: block;
+    text-align: left;
+}
+.col a:hover{
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+/*  BANNER SECTION  */
+
+.banner{
+    width: 100%;
+    overflow: hidden;
+}
+.slider{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    animation-name: slider;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    transition-delay: 2ms;
+}
+.slider img{
+    width: 100%;
+}
+
+/*      <!--    Common for all  -->    */
+.card{
+    box-shadow: rgb(177, 174, 174) 0px 0px 5px 1px;
+    padding: 10px 0px;
+    margin: 10px 5px;
+    border-radius: 5px;
+}
+.common-heading{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 20px;
+    margin-top: 20px;
+    box-shadow: 0 1px 1px 0 rgb(0, 0, 0);
+}
+.common-heading-left h1{
+    font-size: 20px;
+    font-weight: 400;
+    padding: auto;
+}
+.common-heading-right button{
+    width: 90px;
+    height: 40px;
+    font-size: 18px;
+    background-color: #2874f0;
+    border: none;
+    color: wheat;
+    border-radius: 4px;
+}
+.common-row-col-deals{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-height: 366px;
+    margin: 10px 0px;
+}
+.common-col{
+    text-align: center;
+    line-height: 22px;
+}
+.common-col img{
+    width: 100px;
+    height: 150px;
+    transition: 300ms;
+}
+.common-col img:hover{
+    transform: scale(1.2);
+}
+.common-col h3 h4 h6{
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.common-col h3{
+    margin-top: 10px;
+    font-size: 18px;
+}
+.common-col h4{
+    color: green;
+    font-size: 16px;
+    font-weight: 300;
+}
+.common-col h6{
+    color: gray;
+    font-size: 14px;
+    font-weight: 100;
+}
+.col-deals img{
+    width: 145px;
+    height: 150px;
+}
+#add-cart:hover{
+    color: #2874f0;
+}
+
+</style>
+
+</head>
+<body>
+
+    <nav class="navigation">
+        <img class="logo" src="https://image.similarpng.com/very-thumbnail/2021/08/Healthy-logo-or-medical-logo-on-transparent-background-PNG.png" alt="" height="80cm">
+        <ul>
+            <li><a href="index.html"><h3>Home</h3></a></li>
+            <li><a onclick="redirect_to_home();"><h3>About us</h3></a></li>
+            <li><a href="deparment.html"><h3>Department</h3></a></li>
+            <li><a href="medicine.html"><h3>Medicine</h3></a></li>
+            <li><a href="doctors.html"><h3>Doctors</h3></a></li>
+            <li><a href="#"><h3>Contact us</h3></a></li>
+        </ul>
+    </nav>
+
+     <!--    BANNER SECTION  -->
+     <section>
+        <div class="BANNER">
+            <div class="slider">
+                <img src="./Picture/banner1.jpg.jpg" alt="banner">
+            </div>
+        </div>
+    </section>
+    <!--    Common for all 1  -->
+    <section>
+        <div class="card">
+            <div class="common-heading">
+                <div class="common-heading-left">
+                    <h1><b>Deals of the Day</b></h1><i class="fa-solid fa-timer"></i>
+                </div>
+                <div class="common-heading-right">
+                    <button>View all</button>
+                </div>
+            </div>
+            <div class="common-row-col-deals">
+                <div class="common-col">
+                    <img src="./Picture/i11.png.jpg" alt="" class="product-img">
+                    <h3 class="product-title">Pampers</h3>
+                    <h4>Upto 80% off</h4>
+                    <h6 class="price">Diaper Pants XXL, 42 Count</h6>
+                    <!-- <i class="fa-solid fa-bag-shopping" id="add-cart"></i> -->
+                </div>
+                <div class="common-col">
+                    <img src="./Picture/i12.pnj.jpg" alt="" class="product-img">
+                    <h3 class="product-title">Nestle Resource</h3>
+                    <h4>Upto 25% off</h4>
+                    <h6 class="price">Nestle Resource</h6>
+                    <!-- <i class="fa-solid fa-bag-shopping" id="add-cart"></i> -->
+                </div>
+                <div class="common-col">
+                    <img src="./Picture/i13.png.jpg" alt="" class="product-img">
+                    <h3 class="product-title">Simple Glucometer</h3>
+                    <h4>Min 32% off</h4>
+                    <h6 class="price"></h6>
+                    <!-- <i class="fa-solid fa-bag-shopping" id="add-cart"></i> -->
+                </div>
+                <div class="common-col">
+                    <img src="./Picture/i14.png.jpg" alt="" class="product-img">
+                    <h3 class="product-title">Best of Hair Dryers</h3>
+                    <h4>Top Brands</h4>
+                    <h6 class="price">Starts from <i class="fa-solid fa-indian-rupee-sign"></i>459</h6>
+                    <!-- <i class="fa-solid fa-bag-shopping" id="add-cart"></i> -->
+                </div>
+                <div class="common-col">
+                    <img src="https://images.apollo247.in/pub/media/catalog/product/H/K/HKV0010_1-JULY23_1.jpg?tr=w-167.5,q-80,f-webp,dpr-1.25,c-at_max" alt="" class="product-img">
+                    <h3 class="product-title">HealthKart HK Vitals Multivitamin</h3>
+                    <h4>Extra 10% off</h4>
+                    <h6 class="price">60 Tablets</h6>
+                    <!-- <i class="fa-solid fa-bag-shopping" id="add-cart"></i> -->
+                </div>
+                <div class="common-col">
+                    <img src="https://images.apollo247.in/pub/media/catalog/product/N/E/NEU0994_1-AUG23_1.jpg?tr=w-167.5,q-80,f-webp,dpr-1.25,c-at_max" alt="" class="product-img">
+                    <h3 class="product-title">Neutrogena Hydro</h3>
+                    <h4>Min 10% off + Extra 15% off*</h4>
+                    <h6 class="price">Boost Water Gel, 50 gm</h6>
+                    <!-- <i class="fa-solid fa-bag-shopping" id="add-cart"></i> -->
+                </div>
+                <div class="common-col">
+                    <img src="https://images.apollo247.in/pub/media/catalog/product/O/U/OUR0005_1-AUG23_1.jpg?tr=w-167.5,q-80,f-webp,dpr-1.25,c-at_max" alt="" class="product-img">
+                    <h3 class="product-title">Ourdaily Vitamin E</h3>
+                    <h4>Top Selling</h4>
+                    <h6 class="price"><i>400</i> mg, 10 Soft Gelatin Capsules</h6>
+                    <!-- <i class="fa-solid fa-bag-shopping" id="add-cart"></i> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    MOBILE SECTION  -->
+    <section>
+        <div class="card">
+
+            <div class="common-row-col-deals">
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/207833/calcimax-forte-plus-strip-of-30-tablets-2-1671741016.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Calcimax Forte </h3>
+                    <h4>1Plus Strip Of 30 Tablets</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>289</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/194710/evion-forte-capsule-10s-2-1671740837.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Evion Forte </h3>
+                    <h4>10 Capsules</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>199</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/D18575/pharmeasy-biotin-10000mcg-for-hair-skin-nails-bottle-of-60-10-1676757634.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Pharmeasy Biotin</h3>
+                    <h4>For Hair, Skin & Nails</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>419</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/V34192/pharmeasy-vitamin-d3-supports-bone-health-helps-in-absorption-of-calcium-bottle-of-60-2-1671743909.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title"> Vitamin D3</h3>
+                    <h4>Supports Bone Health</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>319</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products/I34593/calcimax-k2-plus-strip-of-15-tablets-2-1665151153.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Calcimax K2 Plus</h3>
+                    <h4>15 Tablets</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>379</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/N20354/rawrx-plant-based-calcium-tablets-with-vitamin-c-d3-30-tablets-pack-of-3-2-1687782383.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Rawrx Plant</h3>
+                    <h4>Calcium Tablets With Vitamin C & D</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>1719</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/P71587/nutrileague-calcium-vitamin-d3-effervescent-tablet-pack-of-20-2-1679977813.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Nutrileague</h3>
+                    <h4>Calcium + Vitamin D3</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"><b>239</b></i></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--    CLOTHING  -->
+    <section>
+        <div class="card">
+
+            <div class="common-row-col-deals">
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/G85189/zandu-kesari-jivan-health-supplement-bottle-of-450-g-2-1654251649.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Zandu Kesari Jivan</h3>
+                    <h4>Bottle Of 450 G</h4>
+                    <h6 class="price">Now<i class="fa-solid fa-indian-rupee-sign"></i><b>359</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/E89384/dr-reckeweg-bio-combination-25-bc-25-tablet-pack-of-2-2-1680078319.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Dr. Reckeweg</h3>
+                    <h4>Bio-Combination 25</h4>
+                    <h6 class="price">Under<i class="fa-solid fa-indian-rupee-sign"></i><b>309</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/V07139/liveasy-surgical-microporus-surgical-tape-1inch-5-meter-pack-of-1-2-1671743421.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Liveasy Surgical</h3>
+                    <h4> Tape 1inch* 5</h4>
+                    <h6 class="price">Starts from<i class="fa-solid fa-indian-rupee-sign"></i><b>29</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/G19614/liveasy-essentials-adhesive-bandages-box-of-100-1-1641791579.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Liveasy Essentials</h3>
+                    <h4>Box Of 100</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>196</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/I33691/relispray-instant-pain-relief-spray-49grm-2-1669710376.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Relispray Instant</h3>
+                    <h4>Spray 49grm</h4>
+                    <h6 class="price">Now<i class="fa-solid fa-indian-rupee-sign"></i><b>189</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/U32855/cetaphil-oily-skin-cleanser-125ml-and-dam-100g-combo-2-1671743880.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Cetaphil Oily Skin</h3>
+                    <h4>125ml And 100g Combo</h4>
+                    <h6 class="price">Now<i class="fa-solid fa-indian-rupee-sign"></i><b>1167</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+                <div class="common-col">
+                    <img src="https://cdn01.pharmeasy.in/dam/products_otc/E98688/tynor-j-04-wrist-wrap-size-universal-2-1632781390.jpg?dim=700x0&dpr=1&q=100" alt="" class="product-img">
+                    <h3 class="product-title">Tynor J 04</h3>
+                    <h4>Wrist Wrap Size Universal</h4>
+                    <h6 class="price"><i class="fa-solid fa-indian-rupee-sign"></i><b>199</b></h6>
+                    <i class="fa-solid fa-bag-shopping" id="add-cart"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="frontend_script.js"></script>
+</body>
+</html>
